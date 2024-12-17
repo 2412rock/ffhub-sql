@@ -15,7 +15,8 @@ BEGIN
     CREATE TABLE Videos (
         VideoId INT IDENTITY(1,1) PRIMARY KEY,
         Link NVARCHAR(2048) NOT NULL,
-        Title NVARCHAR(200)
+        Title NVARCHAR(200),
+        IsSuggestion BIT
     );
 END;
 GO
