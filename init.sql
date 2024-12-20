@@ -30,7 +30,7 @@ END
 IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Videos' AND COLUMN_NAME = 'IsSuggestion')
 BEGIN
     ALTER TABLE Videos
-    ADD IsSuggestion BIT;
+    ADD IsSuggestion BIT NOT NULL DEFAULT 0;
 END
 
 -- Create Users table if it does not exist
