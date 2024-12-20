@@ -17,10 +17,13 @@ BEGIN
         Link NVARCHAR(2048) NOT NULL,
         Title NVARCHAR(200),
         IsSuggestion BIT,
-        Thumbnail NVARCHAR(2048) NOT NULL
+        
     );
 END;
 GO
+
+ALTER TABLE Videos
+ADD Thumbnail NVARCHAR(2048) NOT NULL DEFAULT '';
 
 -- Create Users table if it does not exist
 IF NOT EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Tags')
