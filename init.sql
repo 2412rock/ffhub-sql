@@ -16,7 +16,6 @@ BEGIN
         VideoId INT IDENTITY(1,1) PRIMARY KEY,
         Link NVARCHAR(2048) NOT NULL,
         Title NVARCHAR(200),
-        IsSuggestion BIT,
         
     );
 END;
@@ -24,6 +23,7 @@ GO
 
 ALTER TABLE Videos
 ADD Thumbnail NVARCHAR(2048) NOT NULL DEFAULT '';
+ADD IsSuggestion BIT,
 
 -- Create Users table if it does not exist
 IF NOT EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Tags')
