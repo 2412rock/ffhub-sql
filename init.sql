@@ -22,8 +22,8 @@ END;
 GO
 
 ALTER TABLE Videos
-ADD Thumbnail NVARCHAR(2048) NOT NULL DEFAULT '';
-ADD IsSuggestion BIT,
+ADD Thumbnail NVARCHAR(2048) NOT NULL DEFAULT '',
+    IsSuggestion BIT;
 
 -- Create Users table if it does not exist
 IF NOT EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Tags')
