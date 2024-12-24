@@ -26,7 +26,7 @@ BEGIN
     CREATE TABLE Comments (
         CommentId INT IDENTITY(1,1) PRIMARY KEY,
         VideoId INT,
-        CommentText NVARCHAR(5048) NOT NULL
+        CommentText NVARCHAR(5048) NOT NULL,
         FOREIGN KEY (VideoId) REFERENCES Videos(VideoId),
     );
 END;
